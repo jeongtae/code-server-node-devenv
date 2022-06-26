@@ -1,0 +1,30 @@
+version: '3.5'
+
+services:
+  code-server:
+    build:
+      context: docker
+      dockerfile: code-server.Dockerfile
+      args:
+        - NVM_VERSION=${NVM_VERSION}
+        - NODE_VERSION=${NODE_VERSION}
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - .:/config/workspace
+      - ./docker/code-server-settings.json:/config/data/User/settings.json
+      - ./docker/code-server-settings.json:/config/data/Machine/settings.json
+      - ./docker/code-server-keybindings.json:/config/data/User/keybindings.json
+      - ./docker/code-server-snippets:/config/data/User/snippets
+    ports:
+      - '${PORT:-8443}:8443'
+      - '${APP_PORT:-3000}:3000'
+  redis:
+    image: redis:7.0.2-alpine
+    restart: always
+    command:
+      - redis-server
+      - --save 10 1
+    volumes:
+      - ./docker/data/redis:/data

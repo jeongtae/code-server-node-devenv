@@ -1,0 +1,24 @@
+{
+  "files.exclude": {
+    "docker": true
+  },
+  "files.associations": {
+    "*.env": "shellscript"
+  },
+  "files.autoSave": "off",
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.rulers": [100],
+  "json.format.enable": false,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "javascript.validate.enable": false,
+  "typescript.validate.enable": false,
+  "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "GitHub Light",
+  "workbench.preferredDarkColorTheme": "GitHub Dark",
+  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "security.workspace.trust.enabled": false
+}
